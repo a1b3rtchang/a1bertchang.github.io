@@ -1,26 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route }
+    from 'react-router-dom';
+import Home from './pages';
+import About from './pages/about';
+import Contact from './pages/contact';
+import Projects from './pages/projects';
+import Resume from './pages/resume';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    React.useEffect(() => {
+        const doc: Element | null = document.firstElementChild
+        if (doc != null) {
+            doc.setAttribute('color-scheme', "dark")
+        }
+
+        const nav: Element | null = document.querySelector(".Nav");
+        let lastScrollY: number = window.scrollY;
+
+        if (window.scrollY <= 0) {
+            nav?.classList.remove('nav-hidden')
+        }
+        window.addEventListener("scroll", () => {
+            if (lastScrollY <= window.scrollY) {
+                nav?.classList.add("nav--hidden");
+            } else {
+                console.log("going up");
+                nav?.classList.remove("nav--hidden");
+            }
+            lastScrollY = window.scrollY;
+        })
+    }, []);
+
+
+    return (
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/projects' element={<Projects />} />
+                <Route path='/resume' element={<Resume />} />
+            </Routes>
+            <Footer />
+        </Router>
+    );
 }
 
 export default App;
