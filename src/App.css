@@ -1,0 +1,256 @@
+* {
+  --brand-hue: 185;
+  --brand-saturation: 120%;
+  --brand-lightness: 90%;
+  --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+  --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+  --text2-light: hsl(var(--brand-hue) 30% 30%);
+  --surface1-light: hsl(var(--brand-hue) 25% 90%);
+  --surface2-light: hsl(var(--brand-hue) 20% 99%);
+  --surface3-light: hsl(var(--brand-hue) 20% 92%);
+  --surface4-light: hsl(var(--brand-hue) 20% 85%);
+  --surface-shadow-light: var(--brand-hue) 10% 20%;
+  --shadow-strength-light: .02;
+  --brand-dark: hsl( var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5) );
+  --text1-dark: hsl(var(--brand-hue) 15% 85%);
+  --text2-dark: hsl(var(--brand-hue) 5% 65%);
+  --surface1-dark: hsl(var(--brand-hue) 10% 10%);
+  --surface2-dark: hsl(var(--brand-hue) 10% 15%);
+  --surface3-dark: hsl(var(--brand-hue) 5% 20%);
+  --surface4-dark: hsl(var(--brand-hue) 5% 25%);
+  --surface-shadow-dark: var(--brand-hue) 50% 3%;
+  --shadow-strength-dark: .8;
+  --brand-dim: hsl( var(--brand-hue) calc(var(--brand-saturation) / 1.25) calc(var(--brand-lightness) / 1.25) );
+  --text1-dim: hsl(var(--brand-hue) 15% 75%);
+  --text2-dim: hsl(var(--brand-hue) 10% 61%);
+  --surface1-dim: hsl(var(--brand-hue) 10% 20%);
+  --surface2-dim: hsl(var(--brand-hue) 10% 25%);
+  --surface3-dim: hsl(var(--brand-hue) 5% 30%);
+  --surface4-dim: hsl(var(--brand-hue) 5% 35%);
+  --surface-shadow-dim: var(--brand-hue) 30% 13%;
+  --shadow-strength-dim: .2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+    --surface1: var(--surface1-dark);
+    --surface2: var(--surface2-dark);
+    --surface3: var(--surface3-dark);
+    --surface4: var(--surface4-dark);
+    --surface-shadow: var(--surface-shadow-dark);
+    --shadow-strength: var(--shadow-strength-dark);
+  }
+}
+
+[color-scheme="light"] {
+  color-scheme: light;
+
+  --brand: var(--brand-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+  --surface-shadow: var(--surface-shadow-light);
+  --shadow-strength: var(--shadow-strength-light);
+}
+
+[color-scheme="dark"] {
+  color-scheme: dark;
+  
+  --brand: var(--brand-dark);
+  --text1: var(--text1-dark);
+  --text2: var(--text2-dark);
+  --surface1: var(--surface1-dark);
+  --surface2: var(--surface2-dark);
+  --surface3: var(--surface3-dark);
+  --surface4: var(--surface4-dark);
+  --surface-shadow: var(--surface-shadow-dark);
+  --shadow-strength: var(--shadow-strength-dark);
+}
+
+[color-scheme="dim"] {
+  color-scheme: dark;
+
+  --brand: var(--brand-dim);
+  --text1: var(--text1-dim);
+  --text2: var(--text2-dim);
+  --surface1: var(--surface1-dim);
+  --surface2: var(--surface2-dim);
+  --surface3: var(--surface3-dim);
+  --surface4: var(--surface4-dim);
+  --surface-shadow: var(--surface-shadow-dim);
+  --shadow-strength: var(--shadow-strength-dim);
+}
+
+* {
+    margin: 0;
+    border:0;
+    font-family: monospace;
+}
+
+html, body, #root, .App {
+  background-color: var(--surface1);
+  color: var(--text1);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.page {
+  margin-top: 0rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-top: 9rem;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  margin: 1rem;
+  width: 65vw;
+  height: 84.5vw;
+}
+
+.Nav {
+  background: var(--surface1);
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  position: fixed;
+  box-shadow: 0 0 5px 5px black;
+  transition: transform 0.3s;
+}
+
+.nav--hidden {
+  transform: translateY(-7rem);
+  box-shadow: none;
+}
+
+.NavMenu {
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+
+.contact-button{
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  background: var(--surface2);
+  color: var(--brand);
+  opacity: 0.8;
+
+  border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+  box-shadow:
+    0 1.4px 1.1px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03)),
+    0 3.3px 2.6px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .01)),
+    0 6.3px 5px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02)),
+    0 11.2px 9px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .02)),
+    0 1px 16.7px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + .03)),
+    0 2px 2px hsl(var(--surface-shadow) / var(--shadow-strength))
+  ;
+}
+
+.contact-button:hover {
+  opacity: 1;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-holder{
+  margin: 1rem;
+}
+
+.button {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: var(--surface1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  padding: 1rem .5rem;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: var(--brand);
+    background-color: var(--surface2);
+  }
+  -webkit-transition: all .07s linear;
+	transition: all .07s linear;
+}
+
+.button:hover {
+  background-color: var(--surface2);
+}
+
+.container {
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
