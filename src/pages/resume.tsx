@@ -6,7 +6,8 @@ const About: React.FC = () => {
             <h1>
                 Resume
             </h1>
-            <iframe src="https://drive.google.com/file/d/1J5KZvdtM6d0S9qszWcUnGuSor6_CMyWP/preview" allow="autoplay"></iframe>
+            <object data="https://drive.google.com/file/d/1J5KZvdtM6d0S9qszWcUnGuSor6_CMyWP/preview"
+                    type="application/pdf"/>
         </div>
     );
 };
