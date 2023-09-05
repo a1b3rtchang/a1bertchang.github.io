@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/a1bertchang.github.io/static/css/main.65a758ee.css",
-    "main.js": "/a1bertchang.github.io/static/js/main.d8d301e7.js",
-    "index.html": "/a1bertchang.github.io/index.html",
-    "main.65a758ee.css.map": "/a1bertchang.github.io/static/css/main.65a758ee.css.map",
-    "main.d8d301e7.js.map": "/a1bertchang.github.io/static/js/main.d8d301e7.js.map"
+    "main.css": "/static/css/main.563366b4.css",
+    "main.js": "/static/js/main.f33c7324.js",
+    "index.html": "/index.html",
+    "main.563366b4.css.map": "/static/css/main.563366b4.css.map",
+    "main.f33c7324.js.map": "/static/js/main.f33c7324.js.map"
   },
   "entrypoints": [
-    "static/css/main.65a758ee.css",
-    "static/js/main.d8d301e7.js"
+    "static/css/main.563366b4.css",
+    "static/js/main.f33c7324.js"
   ]
 }
