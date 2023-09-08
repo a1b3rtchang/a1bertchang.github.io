@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         <div className="footer">
             <div className="tooltip">
                 <button
-                    className="contact-button tooltip"
+                    className="contact-button"
                     onClick={copy_email}
                     onMouseOut={out_email}
                 >

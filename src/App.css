@@ -196,7 +196,7 @@ object {
 
 .tooltip {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .tooltip .tooltiptext {
@@ -209,9 +209,8 @@ object {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
+  bottom: 37.5%;
+  left: -11.5rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -219,12 +218,12 @@ object {
 .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
+  top: 35%;
+  left: 96.43%;
+  margin-left: 5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: transparent transparent transparent #555;
 }
 
 .tooltip:hover .tooltiptext {
