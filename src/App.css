@@ -115,23 +115,34 @@ html, body, #root, .App {
   
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 140%;
 }
 
 object {
   margin: 1rem;
-  width: 60vhtrdfsdafsdfasdfasfffdhjkljklllkjk;
-  height: 78vh;
+  width: 60vw;
+  height: 90vw;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.albert {
+  margin: 0 1rem;
 }
 
 .Nav {
+  z-index: 1000;
   background: var(--surface1);
   height: 7rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1rem;
+  
   position: fixed;
   box-shadow: 0 0 5px 5px black;
   transition: transform 0.3s;
@@ -145,13 +156,18 @@ object {
 .NavMenu {
   display: flex;
   align-items: center;
+  background: var(--surface1);
+  padding-right: .5rem;
 }
 
 .footer {
   position: fixed;
   bottom: 0;
+  right: 0;
   margin-bottom: 1rem;
+  margin-right: 1rem;
   display: flex;
+  flex-direction: column;
 }
 
 
@@ -244,6 +260,65 @@ object {
 .button:hover {
   background-color: var(--surface2);
 }
+
+.Nav .menuIcon {
+  display: none;
+  width: 4.5rem;
+  height: 4rem;
+}
+
+@media screen and (max-width: 700px) {
+  .Nav .NavMenu .button-holder:not(:first-child) {
+    display: none;
+    opacity: 0;
+    transition: all 1s ease-in;
+  }
+
+  .Nav .NavMenu .button-holder:not(:first-child) .button {
+    padding: .5rem 1rem;
+    &.active {
+      color: var(--brand);
+      background-color: var(--surface1);
+    }
+  }
+
+  .Nav .menuIcon {
+    display: flex;
+  }
+  .Nav .NavMenu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    box-shadow: 0 0 5px -5px black;
+    background: hsl(var(--brand-hue), 10%, 10%, 50%);
+  }
+
+  .Nav.responsive .NavMenu {
+    width: 100vw;
+    height: 100vh;
+    background: hsl(var(--brand-hue), 10%, 10%, 90%);
+  }
+
+  .Nav.responsive .NavMenu .button-holder:not(:first-child) {
+    display: flex;
+    opacity: 1;
+  }
+
+  .Nav.responsive .NavMenu .button:hover {
+    text-decoration: underline;
+    background-color: var(--surface1);
+  }
+
+  .Nav.responsive .NavMenu .button-holder:not(:first-child) .button{
+    opacity: 1;
+  }
+
+}
+
 
 .container {
   width: 100%;

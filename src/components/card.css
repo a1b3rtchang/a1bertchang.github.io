@@ -1,3 +1,5 @@
+@import "../App.css";
+
 .project {
     width: 310px;
     height: 460px;
@@ -48,7 +50,6 @@
 }
 
 .project div:nth-of-type(3) span {
-    font-family: sans-serif;
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
@@ -58,8 +59,7 @@
 
 .project div:nth-of-type(3) h3 {
     margin-top: 5px;
-    font-family: serif;
-    color: #f9d3b4;
+    color: var(--brand);
 }
 
 .project:hover div:nth-of-type(2) {
